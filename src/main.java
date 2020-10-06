@@ -71,7 +71,7 @@ public class main {
         //mapping each number to letter to String array
         String[] mapping = {"0", "1", "abc", "def", "ghi",
         "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        //recursion call to method nesarS
+        //recursion call to method
         helper(result, digits, "", 0, mapping);
         return result;
     }
