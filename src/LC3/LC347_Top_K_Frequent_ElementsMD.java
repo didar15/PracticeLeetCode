@@ -14,13 +14,15 @@ public class LC347_Top_K_Frequent_ElementsMD {
         }
         //Create a Max Heap and add all the distinct elements
         //will use map values to sort in heap in decending order
-        Queue<Integer> q = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
+        //Queue<Integer> q = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
+
+        Queue<Integer> q = new PriorityQueue<>((a, b) -> map.get(b).compareTo(map.get(a)));
 
         //add all key values to heap
         //inputing keys which priority queue sorts by decending values
+
         for (int key: map.keySet()) {
             q.add(key);
-            if (q.size() > k) q.poll();
         }
         int [] res= new int[k];
         //Poll top k frequent elements off the Heap
@@ -33,7 +35,8 @@ public class LC347_Top_K_Frequent_ElementsMD {
     }
 
     public static void main(String[] args) {
-        int [] a={1,1,1,2,2,3};
+        int [] a={1,1,2,3,3,3};
+
         System.out.println(Arrays.toString(topKFrequent(a, 2)));
     }
 }
