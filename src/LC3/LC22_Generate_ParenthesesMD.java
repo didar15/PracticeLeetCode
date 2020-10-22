@@ -33,6 +33,7 @@ public class LC22_Generate_ParenthesesMD {
     }
 
 
+
     public static void main(String[] args) {
         System.out.println(generateParenthesis(3));
     }
